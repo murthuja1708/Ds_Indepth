@@ -1,45 +1,26 @@
 
-#include<stdio.h>
 #include "linked_list.h"
-
-void reverse_list(struct node* start)
-{
-	struct node* p,*q,*r;
-	p=start;
-	q=NULL;
-	r=NULL;
-
-	while(p!=NULL)
-	{
-		r=q;
-		q=p;
-		p=p->next;
-		q->next=r;
-		
-	}
-}
 
 int main()
 {
 
-	struct node* list = create_list(10);
+	struct node* _list = create_list();
 
 	for(int i=1;i<10;i++)
 	{
-		push_back(list,i);
+		push_back(_list,i);
 	}
 	
-	struct node* temp = list;
 
-	reverse_list(list);
+	struct node* temp;
+	//reverse_list(_list);
+	display_list();
 
-	destroy_list(list);
-	while(temp!=NULL)
-	{
-		printf("%d\n",temp->num);
-		temp = temp->next;
-	}
+	swap_adjacent2(_list);
 
+	display_list();
+
+	destroy_list(_list);
 
 
 	return 0;
