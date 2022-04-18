@@ -1,6 +1,18 @@
 
-#include<stdio.h>
 #include "linked_list.h"
+
+void reverse_list1(struct node* start)
+{
+	struct node* p=start->next;
+	struct node* temp;
+	while(p!=NULL)
+	{
+		temp=p;
+		free(p);
+		push_front(start,temp->num);
+	}
+	
+}
 
 void reverse_list(struct node* start)
 {
@@ -22,7 +34,7 @@ void reverse_list(struct node* start)
 int main()
 {
 
-	struct node* list = create_list(10);
+	struct node* list = create_list();
 
 	for(int i=1;i<10;i++)
 	{
@@ -31,7 +43,7 @@ int main()
 	
 	struct node* temp = list;
 
-	reverse_list(list);
+	reverse_list1(list);
 
 	destroy_list(list);
 	while(temp!=NULL)

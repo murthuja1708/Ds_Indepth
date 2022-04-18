@@ -1,13 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
 #include "linked_list.h"
 
-/*
-struct node{
-	int num;
-	struct node* next;
-}*head;
-*/
 
 struct node* createNode(int data)
 {
@@ -22,11 +14,12 @@ struct node* createNode(int data)
 	return NULL;
 }
 
-struct node* create_list(int num)
+struct node* create_list()
 {
-	head = createNode(num);
-	return head;
+	return list;
 }
+
+
 
 void push_back(struct node* start,int num)
 {
