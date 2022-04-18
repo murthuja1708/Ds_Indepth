@@ -29,4 +29,14 @@ void destroy_list(struct node*);
 
 void reverse_list1(struct node*);
 
+void display_list();
+
+void reverse_list(struct node*);
+
+void reverse_list1(struct node*);
+
+void swap_adjacent(struct node*);
+
+void swap_adjacent2(struct node*);
+
 #endif

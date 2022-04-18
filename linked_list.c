@@ -16,10 +16,91 @@ struct node* createNode(int data)
 
 struct node* create_list()
 {
+	list = createNode(0);
 	return list;
 }
 
 
+
+void reverse_list1(struct node* start)
+{
+	struct node* p=start->next;
+	struct node* temp;
+	while(p!=NULL)
+	{
+		temp=p;
+		free(p);
+		push_front(start,temp->num);
+	}
+	
+}
+
+
+
+void reverse_list(struct node* start)
+{
+	struct node *q,*r;
+	q=NULL;
+	r=NULL;
+
+	while(start!=NULL)
+	{
+		r=q;
+		q=start;
+		start=start->next;
+		q->next=r;
+		
+	}
+	list = q;
+}
+
+void swap_adjacent(struct node* p)
+{
+	struct node* q,*r;
+	q = NULL;
+	r = NULL;
+	int i=1;
+
+	while(p != NULL && p->next != NULL)
+	{
+		if(q != NULL)
+		{
+			q->next->next = p->next;
+		}
+		q = p->next;
+		p->next = p->next->next;
+		q->next = p;
+		if(r == NULL)
+		{
+			list = q;
+			r = q;
+		}
+		p = p->next;
+	}
+}
+
+void swap_adjacent2(struct node* p)
+{
+	
+	struct node* q,*r;
+	int temp;
+
+	if(!p || !p->next)
+	{
+		return;
+	}
+	q = p;
+	r = p->next;
+
+	while(q)
+	{
+		temp = q->num;
+		q->num = r->num;
+		r->num = temp;
+		q = r->next;
+		r = q ? q->next : 0;
+	}
+}
 
 void push_back(struct node* start,int num)
 {
@@ -110,6 +191,18 @@ void destroy_list(struct node* start)
 		temp = p;
 	}
 
+
+}
+
+void display_list()
+{
+	struct node* temp = list;
+	while(temp!=NULL)
+	{
+		printf("%d\t",temp->num);
+		temp=temp->next;
+	}
+	printf("\n");
 
 }
 
