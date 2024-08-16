@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <manifest>
-  <project name="Ds_Indepth" remote="https://github.com/murthuja1708/Ds_Indepth.git" path="Ds_Indepth" revision="master" />
+  <project name="Ds_Indepth" remote="origin" path="Ds_Indepth" revision="master" />
 </manifest>
 
 
